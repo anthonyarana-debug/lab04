@@ -26,6 +26,19 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.TextField
 import androidx.compose.ui.res.painterResource
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.width
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Build
+import androidx.compose.material.icons.filled.Call
+import androidx.compose.material.icons.filled.Email
+import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.Icon
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -110,6 +123,70 @@ fun GreetingCardWithTextField() {
             painter = painterResource(id = R.drawable.ic_launcher_foreground),
             contentDescription = "Course Image",
             modifier = Modifier.size(100.dp)
+        )
+    }
+}
+
+@Composable
+fun BusinessCard() {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color(0xFF073042)),
+        verticalArrangement = Arrangement.SpaceBetween,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Spacer(modifier = Modifier.height(80.dp))
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            Text(
+                text = "Anthony Arana",
+                fontSize = 40.sp,
+                color = Color.White,
+                fontWeight = FontWeight.Light
+            )
+            Spacer(modifier = Modifier.height(8.dp))
+            Text(
+                text = "Software Design & Development Student",
+                fontSize = 16.sp,
+                color = Color(0xFF3DDC84),
+                fontWeight = FontWeight.Bold
+            )
+        }
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 32.dp)
+        ) {
+            HorizontalDivider(color = Color.Gray, thickness = 1.dp)
+            ContactRow(icon = Icons.Filled.Call, text = "+51 922 148 885")
+            HorizontalDivider(color = Color.Gray, thickness = 1.dp)
+            ContactRow(icon = Icons.Filled.Build, text = "@anthony-debug")
+            HorizontalDivider(color = Color.Gray, thickness = 1.dp)
+            ContactRow(icon = Icons.Filled.Email, text = "anthony.arana@tecsup.edu.pe")
+            HorizontalDivider(color = Color.Gray, thickness = 1.dp)
+        }
+    }
+}
+
+@Composable
+fun ContactRow(icon: ImageVector, text: String) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 12.dp, horizontal = 48.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Icon(
+            imageVector = icon,
+            contentDescription = null,
+            tint = Color(0xFF3DDC84),
+            modifier = Modifier.size(20.dp)
+        )
+        Spacer(modifier = Modifier.width(24.dp))
+        Text(
+            text = text,
+            color = Color.White,
+            fontSize = 14.sp
         )
     }
 }
