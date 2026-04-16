@@ -78,18 +78,21 @@ fun GreetingCard() {
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(16.dp),
+            .padding(24.dp)
+            .background(Color(0xFF3DDC84)),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
             text = "Welcome to the Course!",
-            fontSize = 28.sp,
-            fontWeight = FontWeight.Bold
+            fontSize = 32.sp,
+            fontWeight = FontWeight.ExtraBold,
+            color = Color.White
         )
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(20.dp))
         Text(
             text = "Hello, Student!",
-            fontSize = 20.sp
+            fontSize = 22.sp,
+            color = Color.White
         )
     }
 }
