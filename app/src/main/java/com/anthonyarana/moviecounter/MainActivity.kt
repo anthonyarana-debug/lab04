@@ -79,7 +79,7 @@ fun GreetingCard() {
         modifier = Modifier
             .fillMaxWidth()
             .padding(24.dp)
-            .background(Color(0xFF3DDC84)),
+            .background(Color(0xFFE53935)),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
