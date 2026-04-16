@@ -132,7 +132,7 @@ fun BusinessCard() {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFF073042)),
+            .background(Color(0xFF1A237E)),
         verticalArrangement = Arrangement.SpaceBetween,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -140,15 +140,15 @@ fun BusinessCard() {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Text(
                 text = "Anthony Arana",
-                fontSize = 40.sp,
+                fontSize = 44.sp,
                 color = Color.White,
-                fontWeight = FontWeight.Light
+                fontWeight = FontWeight.Bold
             )
             Spacer(modifier = Modifier.height(8.dp))
             Text(
                 text = "Software Design & Development Student",
-                fontSize = 16.sp,
-                color = Color(0xFF3DDC84),
+                fontSize = 18.sp,
+                color = Color(0xFF64FFDA),
                 fontWeight = FontWeight.Bold
             )
         }
